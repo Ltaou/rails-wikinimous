@@ -1,0 +1,11 @@
+<h1>Hello from Articles</h1>
+<h2><%= link_to "Create a article", new_articale_path %></h2>
+
+<% @articles.each do |article| %>
+    <div style="border: 1px solid red; padding: 15px; margin-bottom: 10px; width: 25vw;">
+        <h2><%= article.title %></h2>
+        <h4><%= article.content %></h4>
+        <div><%= link_to "update article", edit_articale_path(article) %></div>
+        <%= link_to "delete article", articale_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    </div>
+<% end %>
